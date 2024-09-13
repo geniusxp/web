@@ -4,6 +4,7 @@ import "./globals.css";
 
 const fontSans = Poppins({
   weight: ["400", "500", "600"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
