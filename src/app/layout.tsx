@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
+import { Sidebar } from "@/components/app/sidebar";
 import { Providers } from "./providers";
 
 const fontSans = Poppins({
@@ -21,9 +22,12 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${fontSans.className} ${fontSans.className} antialiased`}
+        className={`${fontSans.className} ${fontSans.className} antialiased flex relative `}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <Sidebar />
+          {children}
+        </Providers>
       </body>
     </html>
   );
