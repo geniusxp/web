@@ -8,10 +8,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { PlusIcon } from "lucide-react";
+import type { ComponentProps } from "react";
 
-export function PollsSection() {
+export function PollsSection(props: ComponentProps<typeof Card>) {
   return (
-    <Card>
+    <Card {...props}>
       <CardHeader className="lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <CardTitle className="text-sm font-medium">Enquetes</CardTitle>

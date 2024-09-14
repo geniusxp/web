@@ -51,7 +51,11 @@ export function EmotionSection({
       fetch("http://192.168.15.8:8000/event/4").then((res) => res.json()),
   });
 
-  const eventDay = eventEmotions?.find(({ date }) => date === selectedDate) || eventEmotions?.[0];
+  if (isLoading) return null;
+
+  const eventDay =
+    eventEmotions?.find(({ date }) => date === selectedDate) ||
+    eventEmotions?.[0];
 
   return (
     <Card className={cn("flex flex-col", className)} {...props}>
@@ -65,23 +69,24 @@ export function EmotionSection({
           </CardDescription>
         </div>
 
-        {!isLoading ? (
-          <fieldset className="flex items-center gap-2">
-            <Label className="font-normal text-sm">Dia do evento</Label>
-            <Select onValueChange={setSelectedDate} value={selectedDate || eventDay?.date}>
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Selecione um dia" />
-              </SelectTrigger>
-              <SelectContent>
-                {eventEmotions?.map(({ date }) => (
-                  <SelectItem key={date} value={date}>
-                    {formatDate(date, "dd/MM/yyyy")}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </fieldset>
-        ) : null}
+        <fieldset className="flex items-center gap-2">
+          <Label className="font-normal text-sm">Dia do evento</Label>
+          <Select
+            onValueChange={setSelectedDate}
+            value={selectedDate || eventDay?.date}
+          >
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Selecione um dia" />
+            </SelectTrigger>
+            <SelectContent>
+              {eventEmotions?.map(({ date }) => (
+                <SelectItem key={date} value={date}>
+                  {formatDate(date, "dd/MM/yyyy")}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </fieldset>
       </CardHeader>
       <CardContent className="flex-1">
         {eventDay ? (
@@ -109,9 +114,7 @@ export function EmotionSection({
           </div>
         ) : (
           <p className="text-sm text-muted-foreground text-center mt-4">
-            {isLoading
-              ? "Carregando emoções..."
-              : "Selecione um dia para visualizar as emoções"}
+            Selecione um dia para visualizar as emoções
           </p>
         )}
       </CardContent>

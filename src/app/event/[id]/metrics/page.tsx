@@ -16,7 +16,7 @@ export default function Home() {
           <ReceiptSection className="lg:col-span-2 animate-in slide-in-from-bottom-8 fade-in duration-1000" />
           <InteractionsSection className="animate-in slide-in-from-bottom-8 fade-in duration-700" />
         </div>
-        <PollsSection />
+        <PollsSection className="animate-in slide-in-from-bottom-8 fade-in duration-500" />
         <EmotionSection />
       </div>
     </main>
