@@ -5,10 +5,10 @@ import { PollsSection } from "./polls-section";
 import { ReceiptSection } from "./receipt-section";
 import { StatisticsSection } from "./statistics-section";
 
-export default function Home() {
+export default function MetricsPage() {
   return (
     <main className="flex-1">
-      <Header eventName="Fiap Next 2024" pageName="Métricas" />
+      <Header eventName="FIAP Next 2024" pageName="Métricas" />
 
       <div className="p-4 grid gap-4">
         <StatisticsSection />

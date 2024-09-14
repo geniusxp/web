@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components/app/sidebar";
+import { Sidebar } from "@/app/events/sidebar";
 
 export default function EventLayout({
   children,
@@ -6,7 +6,7 @@ export default function EventLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div className="flex w-full">
       <Sidebar />
       {children}
     </div>
