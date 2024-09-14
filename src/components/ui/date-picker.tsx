@@ -14,16 +14,23 @@ import {
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 
+interface DatePickerProps extends React.HTMLAttributes<HTMLDivElement> {
+  from?: Date;
+  to?: Date;
+}
+
 export function DatePicker({
   className,
-}: React.HTMLAttributes<HTMLDivElement>) {
+  from = subDays(new Date(), 30),
+  to = new Date(),
+}: DatePickerProps) {
   const [date, setDate] = React.useState<DateRange | undefined>({
-    from: subDays(new Date(), 30),
-    to: new Date(),
+    from,
+    to,
   });
 
   return (
-    <div className={cn("grid gap-2", className)}>
+    <div className="grid">
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -31,7 +38,8 @@ export function DatePicker({
             variant={"outline"}
             className={cn(
               "w-full max-w-[300px] justify-start text-left font-normal",
-              !date && "text-muted-foreground"
+              !date && "text-muted-foreground",
+              className
             )}
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
