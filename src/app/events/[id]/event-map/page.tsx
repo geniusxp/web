@@ -7,7 +7,7 @@ export default function EventMapPage() {
       <Header eventName="FIAP Next 2024" pageName="Mapa do evento" />
 
       <div className="p-4 grid gap-4 animate-in slide-in-from-bottom-8 fade-in duration-1000">
-        <div className="w-3/4 mx-auto">
+        <div className="max-w-screen-md w-full mx-auto">
           <EventMapUpload />
         </div>
       </div>
