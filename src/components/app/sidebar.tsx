@@ -8,15 +8,17 @@ import { SiderbarLinks } from "./sidebar-links";
 
 export function Sidebar() {
   return (
-    <aside className="flex flex-col h-screen sticky top-0 w-64 border-r max-md:hidden">
+    <>
       <div className="h-16 border-b px-5 flex items-center">
-        <Image
-          src="/logo.svg"
-          alt="Fiap Next 2024"
-          width={51}
-          height={42}
-          className="invert dark:invert-0 mix-blend-difference"
-        />
+        <Link href="/events">
+          <Image
+            src="/logo.svg"
+            alt="Fiap Next 2024"
+            width={51}
+            height={42}
+            className="invert dark:invert-0 mix-blend-difference"
+          />
+        </Link>
       </div>
       <nav className="flex-1">
         <SiderbarLinks />
@@ -43,6 +45,6 @@ export function Sidebar() {
           </Link>
         </Button>
       </div>
-    </aside>
+    </>
   );
 }

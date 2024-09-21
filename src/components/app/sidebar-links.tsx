@@ -30,11 +30,11 @@ export function SiderbarLinks() {
           label: "Speakers",
           href: `/events/${eventId}/speakers`,
         },
-        // {
-        //   icon: ClockIcon,
-        //   label: "Cronograma",
-        //   href: `/events/${eventId}/schedule`,
-        // },
+        {
+          icon: ClockIcon,
+          label: "Cronograma",
+          href: `/events/${eventId}/schedule`,
+        },
         {
           icon: MapIcon,
           label: "Mapa do evento",

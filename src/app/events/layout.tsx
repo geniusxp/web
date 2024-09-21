@@ -1,4 +1,4 @@
-import { Sidebar } from "@/app/events/sidebar";
+import { Sidebar } from "@/components/app/sidebar";
 
 export default function EventLayout({
   children,
@@ -7,7 +7,9 @@ export default function EventLayout({
 }>) {
   return (
     <div className="flex w-full">
-      <Sidebar />
+      <aside className="flex flex-col h-screen sticky top-0 w-64 border-r max-md:hidden">
+        <Sidebar />
+      </aside>
       {children}
     </div>
   );
