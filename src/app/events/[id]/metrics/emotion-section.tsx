@@ -22,6 +22,7 @@ import type { EventEmotions } from "@/models/EventEmotions";
 import { useQuery } from "@tanstack/react-query";
 import { formatDate } from "date-fns";
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useState, type ComponentProps } from "react";
 
 const emotionsList = {
@@ -44,11 +45,13 @@ export function EmotionSection({
   className,
   ...props
 }: ComponentProps<typeof Card>) {
+  const { id } = useParams();
+
   const [selectedDate, setSelectedDate] = useState<string | undefined>();
   const { data: eventEmotions, isLoading } = useQuery<EventEmotions[]>({
     queryKey: ["eventEmotions"],
     queryFn: () =>
-      fetch("http://192.168.15.8:8000/event/4").then((res) => res.json()),
+      fetch(`http://192.168.15.8:8000/event/${id}`).then((res) => res.json()),
   });
 
   if (isLoading) return null;
@@ -90,7 +93,7 @@ export function EmotionSection({
       </CardHeader>
       <CardContent className="flex-1">
         {eventDay ? (
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {Object.entries(emotionsList).map(([emotion, label]) =>
               eventDay[emotion] > 0 ? (
                 <div
