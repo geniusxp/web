@@ -8,7 +8,7 @@ export function EventCard() {
       <header className="mb-8 flex items-center gap-2">
         <img
           className="size-8 rounded"
-          src="https://play-lh.googleusercontent.com/S70rI7VrwLic7_p-ax7iAOOopQhcPCzmqyLe5RLJmApTpkgTRaCwWsTNN1Uv1t_t3Pp5"
+          src="https://play-lh.googleusercontent.com/S70rI7VrwLic7_p-ax7iAOOopQhcPCzmqyLe5RLJmApTpkgTRaCwWsTNN1Uv1t_t3Pp5=w240-h480-rw"
           alt="Fiap"
         />
         <h2 className="text-lg font-medium">FIAP Next 2024</h2>

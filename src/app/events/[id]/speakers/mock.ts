@@ -4,7 +4,7 @@ export const speakers = [
     id: 1,
     name: "ThePrimeagen",
     avatar:
-      "https://pbs.twimg.com/profile_images/1759330620160049152/2i_wkOoK_400x400.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSVWa9XHeY-UfQhDzlvXGJyx44ef32ulOkQ&s",
     bio: "Streamer e Youtuber americano conhecido por sua obsessão por Neovim, engenharia e atualmente trabalha na Netflix.",
     nationality: US,
   },
