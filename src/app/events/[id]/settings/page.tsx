@@ -4,6 +4,7 @@ import { DatePicker } from "@/components/ui/date-picker";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { subDays } from "date-fns";
+import Image from "next/image";
 
 export default function SettingsPage() {
   return (
@@ -45,9 +46,11 @@ export default function SettingsPage() {
           <fieldset className="grid space-y-1.5 max-w-96">
             <Label htmlFor="description">Logo do evento</Label>
             <div className="flex items-center gap-4">
-              <img
+              <Image
+                width={96}
+                height={96}
                 className="size-24 rounded"
-                src="https://play-lh.googleusercontent.com/S70rI7VrwLic7_p-ax7iAOOopQhcPCzmqyLe5RLJmApTpkgTRaCwWsTNN1Uv1t_t3Pp5"
+                src="/fiap-logo.png"
                 alt="Fiap"
               />
               <div className="flex flex-col justify-between h-full">

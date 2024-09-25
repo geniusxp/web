@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { BoltIcon, ChartSplineIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export function EventCard() {
   return (
     <div className="grid gap-2 bg-card border rounded-lg p-4 relative overflow-hidden">
       <header className="mb-8 flex items-center gap-2">
-        <img
+        <Image
+          width={32}
+          height={32}
           className="size-8 rounded"
-          src="https://play-lh.googleusercontent.com/S70rI7VrwLic7_p-ax7iAOOopQhcPCzmqyLe5RLJmApTpkgTRaCwWsTNN1Uv1t_t3Pp5=w240-h480-rw"
-          alt="Fiap"
+          src="/fiap-logo.png"
+          alt="FIAP"
         />
         <h2 className="text-lg font-medium">FIAP Next 2024</h2>
       </header>
@@ -24,8 +27,9 @@ export function EventCard() {
           Visualizar detalhes
         </Link>
       </Button>
-      <img
-        src="https://i.ytimg.com/vi/7Ggx_UsW17o/maxresdefault.jpg"
+      <Image
+        fill
+        src="/fiap-banner.png"
         alt=""
         className="absolute inset-0 object-cover -z-10 opacity-30 size-full"
       />

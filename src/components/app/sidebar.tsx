@@ -13,7 +13,7 @@ export function Sidebar() {
         <Link href="/events">
           <Image
             src="/logo.svg"
-            alt="Fiap Next 2024"
+            alt="GeniusXP"
             width={51}
             height={42}
             className="invert dark:invert-0 mix-blend-difference"
@@ -25,8 +25,8 @@ export function Sidebar() {
       </nav>
       <div className="h-16 border-t flex items-center gap-3 px-5">
         <Avatar className="size-8">
-          <AvatarImage src="https://github.com/shadcn.png" />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarImage src="/ericknathan.png" />
+          <AvatarFallback>EN</AvatarFallback>
         </Avatar>
         <div className="grid">
           <span className="text-sm">John Doe</span>
