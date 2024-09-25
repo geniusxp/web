@@ -5,8 +5,10 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 const fontSans = Poppins({
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -20,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body
-        className={`${fontSans.className} ${fontSans.className} antialiased flex relative `}
-      >
+      <body className={`${fontSans.className} antialiased flex relative `}>
         <Providers>{children}</Providers>
       </body>
     </html>
