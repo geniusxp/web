@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { SofaIcon, TicketIcon } from "lucide-react";
+import { HeartHandshakeIcon, SofaIcon, TicketIcon, UsersIcon } from "lucide-react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 
@@ -39,6 +39,16 @@ export function SiderbarLinks() {
           icon: ClockIcon,
           label: "Cronograma",
           href: `/events/${eventId}/schedule`,
+        },
+        {
+          icon: UsersIcon,
+          label: "Usuários",
+          href: `/events/${eventId}/users`,
+        },
+        {
+          icon: HeartHandshakeIcon,
+          label: "Patrocinadores",
+          href: `/events/${eventId}/partners`,
         },
         {
           icon: MapIcon,
