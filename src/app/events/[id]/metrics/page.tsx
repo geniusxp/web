@@ -4,6 +4,8 @@ import { InteractionsSection } from "./interactions-section";
 import { PollsSection } from "./polls-section";
 import { ReceiptSection } from "./receipt-section";
 import { StatisticsSection } from "./statistics-section";
+import { HeatmapSection } from "./heatmap-section";
+import { ReportDownload } from "../../../../components/app/report-download";
 
 export default function MetricsPage() {
   return (
@@ -18,7 +20,10 @@ export default function MetricsPage() {
         </div>
         <PollsSection className="animate-in slide-in-from-bottom-8 fade-in duration-500" />
         <EmotionSection />
+        <HeatmapSection />
       </div>
+
+      <ReportDownload />
     </main>
   );
 }

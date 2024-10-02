@@ -24,6 +24,7 @@ import { formatDate } from "date-fns";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState, type ComponentProps } from "react";
+import { eventEmotions } from "../../../../lib/mocks";
 
 const emotionsList = {
   empty: "Vazio",
@@ -48,11 +49,14 @@ export function EmotionSection({
   const { id } = useParams();
 
   const [selectedDate, setSelectedDate] = useState<string | undefined>();
+  /*
   const { data: eventEmotions, isLoading } = useQuery<EventEmotions[]>({
     queryKey: ["eventEmotions"],
     queryFn: () =>
       fetch(`http://192.168.15.8:8000/event/${id}`).then((res) => res.json()),
   });
+*/
+  const isLoading = false;
 
   if (isLoading) return null;
 

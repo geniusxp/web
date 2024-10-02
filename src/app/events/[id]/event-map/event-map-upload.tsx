@@ -10,7 +10,7 @@ import { toast } from "sonner";
 export default function EventMapUpload() {
   const [image, setImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(
-    "https://i.ibb.co/9V2sFf5/image-map.png"
+    "/event-map.png"
   );
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {

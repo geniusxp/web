@@ -1,5 +1,4 @@
-export type EventEmotions = {
-  date: string;
+export type EventEmotions = Partial<{
   empty: number;
   sadness: number;
   enthusiasm: number;
@@ -13,6 +12,8 @@ export type EventEmotions = {
   boredom: number;
   relief: number;
   anger: number;
+}> & {
+  date: string;
 };
 
 export type EmotionName = Omit<keyof EventEmotions, "date">;

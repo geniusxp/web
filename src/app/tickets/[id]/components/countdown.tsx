@@ -40,23 +40,23 @@ export function Countdown({ targetDate }: CountdownProps) {
 
   return (
     <div className="flex items-center gap-1.5">
-      <div className="flex flex-col items-center justify-center bg-card py-3 px-6 rounded-md border text-center aspect-square h-full">
-        <strong className="text-4xl tabular-nums">{timeLeft.days}</strong>
+      <div className="flex flex-col items-center justify-center bg-card py-3 px-6 rounded-md border text-center h-full">
+        <strong className="text-3xl tabular-nums">{timeLeft.days}</strong>
         <small className="text-sm">dias</small>
       </div>
-      <span className="text-primary text-4xl font-bold">:</span>
-      <div className="flex flex-col items-center justify-center bg-card py-3 px-6 rounded-md border text-center aspect-square h-full">
-        <strong className="text-4xl tabular-nums">{timeLeft.hours}</strong>
+      <span className="text-primary text-3xl font-bold">:</span>
+      <div className="flex flex-col items-center justify-center bg-card py-3 px-6 rounded-md border text-center h-full">
+        <strong className="text-3xl tabular-nums">{timeLeft.hours}</strong>
         <small className="text-sm">horas</small>
       </div>
-      <span className="text-primary text-4xl font-bold">:</span>
-      <div className="flex flex-col items-center justify-center bg-card py-3 px-6 rounded-md border text-center aspect-square h-full">
-        <strong className="text-4xl tabular-nums">{timeLeft.minutes}</strong>
+      <span className="text-primary text-3xl font-bold">:</span>
+      <div className="flex flex-col items-center justify-center bg-card py-3 px-6 rounded-md border text-center h-full">
+        <strong className="text-3xl tabular-nums">{timeLeft.minutes}</strong>
         <small className="text-sm">mins</small>
       </div>
-      <span className="text-primary text-4xl font-bold">:</span>
-      <div className="flex flex-col items-center justify-center bg-card py-3 px-6 rounded-md border text-center aspect-square h-full">
-        <strong className="text-4xl tabular-nums">{timeLeft.seconds}</strong>
+      <span className="text-primary text-3xl font-bold">:</span>
+      <div className="flex flex-col items-center justify-center bg-card py-3 px-6 rounded-md border text-center h-full">
+        <strong className="text-3xl tabular-nums">{timeLeft.seconds}</strong>
         <small className="text-sm">segs</small>
       </div>
     </div>
