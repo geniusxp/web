@@ -1,6 +1,10 @@
+"use client";
+
+import { useTickets } from "@/stores/tickets.store";
 import { AmountSelector } from "./amount-selector";
 
 interface TicketTypeProps {
+  id: number;
   title: string;
   type: string;
   description: string;
@@ -8,11 +12,24 @@ interface TicketTypeProps {
 }
 
 export function TicketType({
+  id,
   title,
   type,
   description,
   price,
 }: TicketTypeProps) {
+  const { updateTicket } = useTickets();
+
+  function handleChangeAmount(amount: number) {
+    console.log("UPDATING")
+    updateTicket({
+      id,
+      title,
+      price: parseFloat(price.replace("R$ ", "").replace(",", ".")),
+      amount,
+    });
+  }
+
   return (
     <div className="bg-card border rounded-lg flex justify-between items-center p-6 gap-1">
       <div>
@@ -25,7 +42,7 @@ export function TicketType({
         <p className="text-muted-foreground">{description}</p>
         <h3 className="text-xl font-semibold">{price}</h3>
       </div>
-      <AmountSelector />
+      <AmountSelector onChange={handleChangeAmount} />
     </div>
   );
 }

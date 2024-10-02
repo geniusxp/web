@@ -5,15 +5,25 @@ import { Input } from "@/components/ui/input";
 import { MinusIcon, PlusIcon } from "lucide-react";
 import { useState } from "react";
 
-export function AmountSelector() {
+interface AmountSelectorProps {
+  onChange?: (amount: number) => void;
+}
+
+export function AmountSelector({ onChange }: AmountSelectorProps) {
   const [amount, setAmount] = useState(0);
 
   function handleIncrease() {
-    setAmount((amount) => amount + 1);
+    setAmount((amount) => {
+      onChange?.(amount + 1);
+      return amount + 1;
+    });
   }
 
   function handleDecrease() {
-    setAmount((amount) => Math.max(0, amount - 1));
+    setAmount((amount) => {
+      onChange?.(Math.max(0, amount - 1));
+      return Math.max(0, amount - 1);
+    });
   }
 
   return (

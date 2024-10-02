@@ -7,7 +7,7 @@ import {
 export function PaymentType() {
   return (
     <div className="grid grid-cols-3 gap-3 font-medium text-center">
-      <label>
+      <label className="cursor-pointer">
         <input
           type="radio"
           name="payment-type"
@@ -21,7 +21,7 @@ export function PaymentType() {
         </div>
       </label>
 
-      <label>
+      <label className="cursor-pointer">
         <input
           type="radio"
           name="payment-type"
@@ -34,7 +34,7 @@ export function PaymentType() {
         </div>
       </label>
 
-      <label>
+      <label className="cursor-pointer">
         <input
           type="radio"
           name="payment-type"

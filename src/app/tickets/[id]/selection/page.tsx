@@ -12,24 +12,28 @@ export default function TicketPage({ params }: { params: { id: string } }) {
           <EventBanner />
 
           <TicketType
+            id={1}
             title="Ingresso Meia-entrada"
             type="Presencial"
             description="Ingresso destinados a estudantes, professores, idosos, Pessoas com Deficiências e outros enquadrantes na Lei Nº 12.933."
             price="R$ 40,00"
           />
           <TicketType
+            id={2}
             title="Ingresso Inteira"
             type="Presencial"
             description="Ingresso destinados ao público geral, sem restrições e sem necessidade de comprovação de direito ao benefício."
             price="R$ 80,00"
           />
           <TicketType
+            id={3}
             title="Ingresso Meia-entrada ON"
             type="Online"
             description="Ingresso destinados a estudantes, professores, idosos, Pessoas com Deficiências e outros enquadrantes na Lei Nº 12.933."
             price="R$ 20,00"
           />
           <TicketType
+            id={4}
             title="Ingresso Inteira ON"
             type="Online"
             description="Ingresso destinados ao público geral, sem restrições e sem necessidade de comprovação de direito ao benefício."
