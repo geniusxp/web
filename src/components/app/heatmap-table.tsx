@@ -69,8 +69,8 @@ export function HeatmapTable({ data }: HeatmapTableProps) {
           </span>
         ))}
       </div>
-      <Table className="max-h-[19.5rem] overflow-x-scroll" ref={tableRef}>
-        <TableHeader>
+      <Table className="max-h-[21rem] overflow-x-scroll rounded border bg-card" ref={tableRef}>
+        <TableHeader className="sticky top-0 bg-background">
           <TableRow>
             <TableHead>Posição</TableHead>
             <TableHead>Local</TableHead>

@@ -29,7 +29,7 @@ export function StatisticCard({
         <p className="text-xs text-muted-foreground">
           <span className={cn(isPositive ? "text-green-500" : "text-red-500")}>
             {isPositive ? "+" : "-"}
-            {percentage}
+            {percentage}%
           </span>{" "}
           comparado ao mês anterior
         </p>
