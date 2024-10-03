@@ -59,10 +59,9 @@ export function DatePicker({
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
-            initialFocus
             mode="range"
             defaultMonth={date?.from}
-            toDate={new Date()}
+            hidden={{ after: new Date() }}
             selected={date}
             onSelect={setDate}
             numberOfMonths={2}
