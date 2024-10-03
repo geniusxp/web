@@ -14,6 +14,7 @@
     --popover-foreground: 240 10% 3.9%;
 
     --primary: 258 90% 66%;
+    --primary-opaque: 258 88% 71%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 240 4.8% 95.9%;
@@ -38,12 +39,25 @@
     --chart-4: 238 89% 66%;
     --chart-5: 258 78% 82%;
 
-    --radius: 0.5rem
+    --radius: 0.5rem;
+
+    --fc-border-color: hsl(var(--border));
+    --fc-today-bg-color: hsl(var(--background));
+    --fc-event-bg-color: hsl(var(--primary-opaque));
+    --fc-event-border-color: transparent;
+    --fc-page-bg-color: hsl(var(--primary));
+    .fc-toolbar {
+      display: none;
+    }
+    .fc-timegrid-slot {
+      height: 3rem;
+    }
   }
+
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    
+
     --card: 240 6% 10% / 50%;
     --card-foreground: 0 0% 98%;
 
@@ -51,6 +65,7 @@
     --popover-foreground: 0 0% 98%;
 
     --primary: 258 90% 66%;
+    --primary-opaque: 256 40% 16%;
     --primary-foreground: 0 0% 98%;
 
     --secondary: 240 3.7% 15.9%;
@@ -80,8 +95,9 @@
   * {
     @apply border-border;
   }
-  
-  body, html {
+
+  body,
+  html {
     @apply min-h-screen w-full;
   }
 

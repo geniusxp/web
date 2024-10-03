@@ -10,8 +10,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { speakers } from "@/lib/mocks";
 import { PlusIcon, SearchIcon } from "lucide-react";
-import { speakers } from "./mock";
 
 export default function SpeakersPage() {
   return (
@@ -19,9 +19,9 @@ export default function SpeakersPage() {
       <Header eventName="FIAP Next 2024" pageName="Speakers" />
 
       <div className="p-4 grid gap-4 animate-in slide-in-from-bottom-8 fade-in duration-1000">
-        <div className="flex items-center justify-between gap-8">
+        <div className="flex items-center justify-between gap-4 md:gap-8 max-sm:flex-col">
           <div className="relative">
-            <Input placeholder="Buscar pelo nome..." className="w-80" />
+            <Input placeholder="Buscar pelo nome..." className="max-w-80 w-full" />
             <SearchIcon className="absolute top-1/2 right-4 transform -translate-y-1/2 size-4 text-muted-foreground" />
           </div>
           <Button>
@@ -29,13 +29,13 @@ export default function SpeakersPage() {
             Adicionar speaker
           </Button>
         </div>
-        <div className="rounded-md border">
+        <div className="rounded-md border w-full overflow-auto">
           <Table>
             <TableHeader>
               <TableRow>
                 <TableHead className="w-16"></TableHead>
                 <TableHead className="w-56">Nome</TableHead>
-                <TableHead>Bio</TableHead>
+                <TableHead className="min-w-72">Bio</TableHead>
                 <TableHead className="text-center">Nacionalidade</TableHead>
               </TableRow>
             </TableHeader>
