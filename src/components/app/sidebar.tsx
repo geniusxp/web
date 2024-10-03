@@ -29,9 +29,9 @@ export function Sidebar() {
           <AvatarFallback>EN</AvatarFallback>
         </Avatar>
         <div className="grid">
-          <span className="text-sm">John Doe</span>
+          <span className="text-sm">Erick Nathan</span>
           <span className="text-[11px] text-muted-foreground">
-            john@geniusxp
+            @ericknathan
           </span>
         </div>
         <Button
