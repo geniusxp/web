@@ -5,7 +5,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 const fontSans = Poppins({
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",

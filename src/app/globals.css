@@ -104,4 +104,14 @@
   body {
     @apply bg-background text-foreground w-screen overflow-x-hidden;
   }
+
+  .perspective {
+    transform: perspective(1000px) rotateY(-13deg) rotateX(5deg) rotate(1deg)
+      scaleY(0.9) scaleX(0.95) translate(-3%) translateY(-3%);
+    @apply transition-transform duration-500 ease-in-out;
+  }
+
+  .perspective:hover {
+    transform: scale(0.9) rotateY(0deg) rotateX(0deg) rotate(0deg) translateY(0);
+  }
 }

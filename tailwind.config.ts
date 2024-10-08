@@ -63,6 +63,15 @@ const config: Config = {
           "5": "hsl(var(--chart-5))",
         },
       },
+      animation: {
+        "scroll-screen": "scroll-screen 10s ease-in-out infinite alternate",
+      },
+      keyframes: {
+        "scroll-screen": {
+          "0%": { transform: "translateY(0)", top: "0" },
+          "100%": { transform: "translateY(-100%)", top: "100%" },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
