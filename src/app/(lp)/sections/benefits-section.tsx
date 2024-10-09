@@ -23,13 +23,13 @@ export function BenefitsSection() {
         <BentoCard
           title="Potencialize Experiências"
           description="Resumos de palestras, relatórios com insights e mais, tudo impulsionado por Inteligência Artificial."
-          icon="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png"
+          icon="/emotions/robot.png"
           className="md:row-span-2"
         />
         <BentoCard
           title="Integrações poderosas"
           description="Integração com redes sociais e outras ferramentas para potencializar a experiência do participante."
-          icon="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Glowing%20Star.png"
+          icon="/emotions/crystal-ball.png"
           className="md:col-span-2"
         >
           <div className="flex items-center justify-center absolute inset-x-0 bottom-4 size-full">
@@ -39,7 +39,7 @@ export function BenefitsSection() {
         <BentoCard
           title="Engaje seus participantes"
           description="Facilite a interação dos participantes em tempo real tornando a experiência mais dinâmica."
-          icon="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/People/Man%20Raising%20Hand.png"
+          icon="/emotions/raising-hand.png"
           className="md:row-span-2"
         >
           <div className="absolute w-full [mask-image:linear-gradient(to_top,transparent_10%,#000_60%)] max-md:h-[280px]">
@@ -49,7 +49,7 @@ export function BenefitsSection() {
         <BentoCard
           title="Evento à moda do participante"
           description="Personalize a experiência do participante com base em suas preferências e comportamentos."
-          icon="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Smiling%20Face%20with%20Sunglasses.png"
+          icon="/emotions/sunglasses.png"
         >
           <Calendar
             mode="single"
@@ -60,7 +60,7 @@ export function BenefitsSection() {
         <BentoCard
           title="Aumente sua produtividade"
           description="Automatize tarefas e processos, otimize a gestão de eventos e garanta a segurança dos dados."
-          icon="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Left%20Speech%20Bubble.png"
+          icon="/emotions/speech-bubble.png"
         >
           <Image
             src="/qrcode.png"
@@ -73,7 +73,7 @@ export function BenefitsSection() {
         <BentoCard
           title="Avalie e otimize"
           description="Acompanhe o desempenho do seu evento em tempo real e tome decisões mais assertivas."
-          icon="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Star.png"
+          icon="/emotions/star.png"
         />
       </div>
     </section>

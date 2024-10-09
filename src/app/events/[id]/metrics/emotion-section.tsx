@@ -105,7 +105,7 @@ export function EmotionSection({
                   className="flex flex-col gap-1 items-center bg-card border border-card-foreground/5 rounded-lg p-4"
                 >
                   <Image
-                    src={`/emotions/${emotion}.svg`}
+                    src={`/emotions/${emotion}.png`}
                     width={40}
                     height={40}
                     alt=""
