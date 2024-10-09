@@ -39,7 +39,7 @@ export function WaitlistDialog({ children, open, onOpenChange }: DialogProps) {
       <Dialog open={open} onOpenChange={onOpenChange}>
         {children ? <DialogTrigger asChild>{children}</DialogTrigger> : null}
 
-        <DialogContent className="w-[90vw]">
+        <DialogContent className="w-[90vw] outline-none">
           {isSubmitted ? (
             <>
               <Image
