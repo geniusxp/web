@@ -23,7 +23,7 @@ export function BenefitsSection() {
         <BentoCard
           title="Potencialize Experiências"
           description="Resumos de palestras, relatórios com insights e mais, tudo impulsionado por Inteligência Artificial."
-          icon="/emotions/robot.png"
+          icon="/emotions/the-robot.png"
           className="md:row-span-2"
         />
         <BentoCard
