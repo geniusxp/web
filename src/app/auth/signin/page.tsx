@@ -42,8 +42,8 @@ export default function SignInPage() {
 
         <div className="grid gap-2">
           <Button>Login</Button>
-          <Button variant="outline" asChild>
-            <Link href="/auth/signup">Criar nova conta</Link>
+          <Button variant="outline" disabled>
+            Criar nova conta
           </Button>
         </div>
 

@@ -1,6 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
+import { WaitlistDialog } from "../app/waitlist-dialog";
+import { useState } from "react";
 
 interface BentoCardProps {
   icon: string;
@@ -17,6 +21,8 @@ export function BentoCard({
   className,
   children,
 }: BentoCardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div
       className={cn(
@@ -45,20 +51,19 @@ export function BentoCard({
         >
           <Button
             variant="ghost"
-            asChild
             size="sm"
             className="pointer-events-auto"
+            onClick={() => setIsModalOpen(true)}
           >
-            <a href="{href}">
-              Leia mais
-              <ArrowRightIcon className="ml-2 size-4" />
-            </a>
+            Leia mais
+            <ArrowRightIcon className="ml-2 size-4" />
           </Button>
         </div>
       </div>
       <div className="absolute inset-0 z-0 opacity-75 transition-all duration-300 ease-out group-hover:scale-[102%] group-hover:opacity-100">
         {children}
       </div>
+      <WaitlistDialog open={isModalOpen} onOpenChange={setIsModalOpen} />
     </div>
   );
 }
