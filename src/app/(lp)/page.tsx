@@ -1,6 +1,7 @@
 
 import { HeroSection } from "./sections/hero-section";
 import { BenefitsSection } from "./sections/benefits-section";
+import { Footer } from "@/components/app/footer";
 
 export default function LandingPage() {
   return (
@@ -11,6 +12,8 @@ export default function LandingPage() {
 
       <HeroSection />
       <BenefitsSection />
+
+      <Footer />
     </main>
   );
 }
