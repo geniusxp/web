@@ -9,7 +9,7 @@ export function BenefitsSection() {
   return (
     <section
       id="benefits"
-      className="container flex items-center flex-col space-y-2"
+      className="container flex items-center flex-col space-y-2 py-8"
     >
       <h2 className="text-2xl md:text-3xl font-semibold text-center">
         Conheça nossos benefícios
