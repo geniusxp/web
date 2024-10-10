@@ -55,7 +55,7 @@ export function HeroSection() {
           </div>
         </div>
         <div className="flex items-center max-lg:flex-col animate-in slide-in-from-bottom-8 fade-in duration-700 max-lg:py-12">
-          <div className="lg:absolute -right-64 aspect-video rounded-xl overflow-hidden lg:perspective border-8 opacity-90 lg:max-w-[60vw]">
+          <div className="lg:absolute -right-64 aspect-video rounded-xl overflow-hidden lg:perspective border-8 opacity-90 lg:max-w-[60vw] w-[70%]">
             <Image
               src="/lp-image.png"
               alt=""

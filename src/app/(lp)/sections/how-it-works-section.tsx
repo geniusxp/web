@@ -7,21 +7,21 @@ import { motion } from "framer-motion";
 const steps = [
   {
     icon: UploadIcon,
-    title: "1. Upload Your Data",
+    title: "1. Tópico 1",
     description:
       "Simply upload your data to our secure platform. We support various file formats and data types to ensure a seamless integration with your existing systems.",
     image: "/prints/metrics.png",
   },
   {
     icon: ZapIcon,
-    title: "2. Click Start",
+    title: "2. Tópico 2",
     description:
       "Our advanced AI algorithms automatically process and analyze your data, extracting valuable insights and patterns that would be difficult to identify manually.",
     image: "/prints/speakers.png",
   },
   {
     icon: SparklesIcon,
-    title: "3. Get actionable insights",
+    title: "3. Tópico 3",
     description:
       "Receive clear, actionable insights and recommendations based on the AI analysis. Use these insights to make data-driven decisions and improve your business strategies.",
     image: "/prints/schedule.png",
@@ -45,7 +45,7 @@ export function HowItWorksSection() {
         nossos principais recursos:
       </p>
 
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-2 gap-14">
         <div className="grid gap-8">
           {steps.map(({ icon: Icon, title, description }, index) => (
             <button
@@ -78,21 +78,32 @@ export function HowItWorksSection() {
                 <h3 className="text-xl font-semibold">{title}</h3>
                 <p className="text-muted-foreground">{description}</p>
               </div>
+
+              {activeStep === index && (
+                <motion.div
+                  className="absolute rounded-lg bg-primary/5 h-[calc(100%_+_2rem)] w-full"
+                  initial={{ scale: 1, opacity: 0 }}
+                  animate={{ scale: 1.05, opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
             </button>
           ))}
         </div>
-        {steps.map(({ image }, index) =>
-          activeStep !== index ? null : (
-            <motion.img
-              src={steps[activeStep].image}
-              alt=""
-              className="w-full aspect-video rounded-lg border object-cover"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-            />
-          )
-        )}
+        <div className="flex items-center justify-center">
+          {steps.map(({ image }, index) =>
+            activeStep !== index ? null : (
+              <motion.img
+                src={steps[activeStep].image}
+                alt=""
+                className="w-full aspect-video rounded-lg border object-cover"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              />
+            )
+          )}
+        </div>
       </div>
     </section>
   );
