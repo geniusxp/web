@@ -3,6 +3,7 @@ import { HeroSection } from "./sections/hero-section";
 import { BenefitsSection } from "./sections/benefits-section";
 import { Footer } from "@/components/app/footer";
 import { HowItWorksSection } from "./sections/how-it-works-section";
+import { FaqSection } from "./sections/faq-section";
 
 export default function LandingPage() {
   return (
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <HeroSection />
       <BenefitsSection />
       <HowItWorksSection />
+      <FaqSection />
 
       <Footer />
     </main>
