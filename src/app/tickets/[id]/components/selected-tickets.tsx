@@ -34,7 +34,7 @@ export function SelectedTickets({
           {tickets.length ? (
             <>
               {tickets.map((ticket) => (
-                <div className="py-3 flex items-center justify-between">
+                <div className="py-3 flex items-center justify-between" key={ticket.id}>
                   <div>
                     <h2 className="font-semibold">{ticket.title}</h2>
                     <small className="text-xs text-muted-foreground">
