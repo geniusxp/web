@@ -9,15 +9,15 @@ import {
   Link,
   Preview,
   Section,
-  Text
+  Text,
 } from "@react-email/components";
 import * as React from "react";
 
 interface EventRecommendationsEmailProps {
-  userName?: string;
+  userName: string;
 }
 
-const websiteUrl = "https://geniusxp.tech";
+const websiteUrl = "https://www.geniusxp.tech";
 
 export function EventRecommendationsEmail({
   userName,
@@ -25,11 +25,14 @@ export function EventRecommendationsEmail({
   return (
     <Html>
       <Head />
-      <Preview>Recomendações do GeniusXP para o FIAP NEXT 2024!</Preview>
+      <Preview>
+        Olá, {userName}! Estamos super felizes por você estar participando do
+        FIAP Next 2024 com o apoio do GeniusXP!
+      </Preview>
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={`${websiteUrl}/logo-background.svg`}
+            src={`${websiteUrl}/logo-background.png`}
             width={64}
             height={64}
             alt="GeniusXP"
@@ -99,7 +102,7 @@ export function EventRecommendationsEmail({
           </Text>
           <Hr style={hr} />
           <Img
-            src={`${websiteUrl}/logo-background.svg`}
+            src={`${websiteUrl}/logo-background.png`}
             width={32}
             height={32}
             style={{
