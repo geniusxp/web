@@ -1,10 +1,10 @@
-import { MailIcon, VideoIcon } from "lucide-react";
+import { ArrowRightIcon, SparklesIcon, VideoIcon } from "lucide-react";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { DemoDialog } from "@/components/app/demo-dialog";
-import { WaitlistDialog } from "@/components/app/waitlist-dialog";
 import Link from "next/link";
+import { AnimatedGradientText } from "@/components/animations/animated-gradient-text";
 
 export function HeroSection() {
   return (
@@ -17,7 +17,7 @@ export function HeroSection() {
           height={120}
           className="h-16 w-auto"
         />
-        <div className="space-x-2">
+        <div className="space-x-2 max-md:hidden">
           <Button variant="secondary" disabled>
             Registrar
           </Button>
@@ -27,10 +27,8 @@ export function HeroSection() {
         </div>
       </header>
       <div className="grid lg:grid-cols-2 flex-1 relative">
-        <div className="gap-6 flex flex-1 justify-center flex-col">
-          <span className="rounded-full px-2.5 py-0.5 border border-amber-500 bg-amber-500/20 text-amber-400 text-sm w-fit animate-in slide-in-from-bottom-8 fade-in duration-300">
-            🚧 Projeto em desenvolvimento...
-          </span>
+        <div className="gap-6 flex flex-1 justify-center flex-col z-10">
+          <AnimatedGradientText>🤩 Visite-nos na ilha 53!</AnimatedGradientText>
           <h1 className="text-4xl md:text-5xl font-semibold max-w-[22ch] animate-in slide-in-from-bottom-8 fade-in duration-500">
             Ofereca uma experiência inesquecível e envolvente em seus eventos.
           </h1>
@@ -46,16 +44,16 @@ export function HeroSection() {
                 Assistir a demo
               </Button>
             </DemoDialog>
-            <WaitlistDialog>
-              <Button className="max-md:w-full">
-                <MailIcon className="size-4 mr-2" />
-                Entrar na lista de espera
-              </Button>
-            </WaitlistDialog>
+            <Button className="max-md:w-full" asChild>
+              <Link href="/event-analisys">
+                <SparklesIcon className="size-4 mr-2" />
+                Obter experiência no FIAP NEXT
+              </Link>
+            </Button>
           </div>
         </div>
         <div className="flex items-center max-lg:flex-col animate-in slide-in-from-bottom-8 fade-in duration-700 max-lg:py-12">
-          <div className="lg:absolute -right-64 aspect-video rounded-xl overflow-hidden lg:perspective border-8 opacity-90 lg:max-w-[60vw] w-[70%]">
+          <div className="lg:absolute -right-64 aspect-video rounded-xl overflow-hidden lg:perspective border-8 opacity-90 lg:max-w-[60vw]">
             <Image
               src="/lp-image.png"
               alt=""

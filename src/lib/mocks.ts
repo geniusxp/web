@@ -3,7 +3,7 @@ import { AR, BR, US } from "country-flag-icons/react/3x2";
 
 export const speakers = [
   {
-    id: '1',
+    id: "1",
     name: "ThePrimeagen",
     avatar:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpSVWa9XHeY-UfQhDzlvXGJyx44ef32ulOkQ&s",
@@ -11,35 +11,35 @@ export const speakers = [
     nationality: US,
   },
   {
-    id: '2',
+    id: "2",
     name: "Rafaella Ballerini",
     avatar: "https://github.com/rafaballerini.png",
     bio: "Criadora de conteúdo de tecnologia, guiando pessoas que desejam iniciar na área de desenvolvimento de software.",
     nationality: BR,
   },
   {
-    id: '3',
+    id: "3",
     name: "Keit Oliveira",
     avatar: "https://github.com/k8adev.png",
     bio: "Programadora há 15 anos, podcaster, livecoder e organizadora de eventos de tecnologia.",
     nationality: BR,
   },
   {
-    id: '4',
+    id: "4",
     name: "Lucas Santos",
     avatar: "https://github.com/khaosdoctor.png",
     bio: "Engenheiro de software brasileiro, atualmente trabalhando na Suécia para @openvolt! Especialista em TypeScript, Deno e Node.js",
     nationality: BR,
   },
   {
-    id: '5',
+    id: "5",
     name: "Junior Garcia",
     avatar: "https://github.com/jrgarciadev.png",
     bio: "Desenvolvedor de software baseado em Buenos Aires, AR, especializado em criar sites e aplicativos móveis excepcionais, e tudo o mais.",
     nationality: AR,
   },
   {
-    id: '6',
+    id: "6",
     name: "Zeno Rocha",
     avatar: "https://github.com/zenorocha.png",
     bio: "Programador e criador de conteúdo brasileiro. Atualmente, ele mora em São Francisco, Califórnia, onde é o Fundador e CEO da Resend.",
@@ -135,32 +135,52 @@ export const pollsData = [
 
 export const events = [
   {
-    id: '1',
+    id: "1",
     title: 'Roundtable: "The future of modern applications"',
     date: "2024-10-26T11:00:00",
     speaker: speakers[0],
     place: "Palco Production",
   },
   {
-    id: '2',
+    id: "2",
     title: "Frontend além do código",
     date: "2024-10-26T11:00:00",
     speaker: speakers[1],
     place: "Palco Staging",
   },
   {
-    id: '3',
+    id: "3",
     title: "Como usar acessibilidade web no seu projeto frontend na prática!",
     date: "2024-10-26T12:00:00",
     speaker: speakers[2],
     place: "Palco Production",
   },
   {
-    id: '4',
+    id: "4",
     title:
       "Código de Escala Global: Desafios tecnológicos para milhões de usuários",
     date: "2024-10-26T12:00:00",
     speaker: speakers[3],
     place: "Palco Staging",
   },
+];
+
+export const eventSegments = [
+  { id: "iot", label: "🤖 IoT" },
+  { id: "turismo", label: "✈️ Turismo e Viagens" },
+  { id: "imobiliario", label: "🏠 Imobiliário" },
+  { id: "agronegocio", label: "🌲 Agronegócio" },
+  { id: "banking", label: "💸 Banking" },
+  { id: "alimentacao", label: "🍔 Alimentação e bebidas" },
+  { id: "moda", label: "👗 Moda" },
+  { id: "educacao", label: "📚 Educação" },
+  { id: "comercio", label: "🛒 Varejo e Comércio" },
+  { id: "saude", label: "👨‍⚕️ Saúde" },
+  {
+    id: "sustentabilidade",
+    label: "🍃 Meio Ambiente e Sustentabilidade",
+  },
+  { id: "governança", label: "💼 Governança" },
+  { id: "transporte", label: "🚌 Locomoção e transporte" },
+  { id: "entretenimento", label: "📷 Mídia e Entretenimento" },
 ];
