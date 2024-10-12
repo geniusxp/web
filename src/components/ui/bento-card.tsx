@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
 import { WaitlistDialog } from "../app/waitlist-dialog";
 import { useState } from "react";
+import Image from "next/image";
 
 interface BentoCardProps {
   icon: string;
@@ -32,8 +33,9 @@ export function BentoCard({
     >
       <div className="grid absolute p-6 bottom-0 bg-gradient-to-t from-black/50 to-black/0 w-full z-10">
         <div className="grid gap-3 transition-all duration-300 group-hover:-translate-y-10">
-          <img
+          <Image
             src={icon}
+            alt=""
             width="25"
             height="25"
             className="size-12 group-hover:scale-75 origin-left ease-in-out transform-gpu transition-all duration-300"
