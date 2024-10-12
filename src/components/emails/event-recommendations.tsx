@@ -9,8 +9,7 @@ import {
   Link,
   Preview,
   Section,
-  Text,
-  Markdown,
+  Text
 } from "@react-email/components";
 import * as React from "react";
 
@@ -54,22 +53,28 @@ export function EventRecommendationsEmail({
             </Text>
 
             <Text style={heading2}>🔥 Destaques selecionados para você:</Text>
-            <Markdown
-              markdownCustomStyles={{
-                li: listItem,
-              }}
-              children={`
-- **Projeto 1** - Conheça o projeto de realidade aumentada que revoluciona a educação.
-
-- **Projeto 2** - Descubra como a inteligência artificial está transformando a saúde.
-
-- **Projeto 3** - Participe de uma experiência imersiva com tecnologias de ponta.
-
-- **Projeto 4** - Conheça o projeto de sustentabilidade que está mudando o mundo.
-
-- **Projeto 5** - Explore a nova plataforma de streaming que vai revolucionar o entretenimento.
-            `}
-            ></Markdown>
+            <ul>
+              <li style={listItem}>
+                <strong>Projeto 1</strong> - Conheça o projeto de realidade
+                aumentada que revoluciona a educação.
+              </li>
+              <li style={listItem}>
+                <strong>Projeto 2</strong> - Descubra como a inteligência
+                artificial está transformando a saúde.
+              </li>
+              <li style={listItem}>
+                <strong>Projeto 3</strong> - Participe de uma experiência
+                imersiva com tecnologias de ponta.
+              </li>
+              <li style={listItem}>
+                <strong>Projeto 4</strong> - Conheça o projeto de
+                sustentabilidade que está mudando o mundo.
+              </li>
+              <li style={listItem}>
+                <strong>Projeto 5</strong> - Explore a nova plataforma de
+                streaming que vai revolucionar o entretenimento.
+              </li>
+            </ul>
           </Section>
           <Section style={tip}>
             <Text style={paragraph}>
@@ -112,6 +117,8 @@ export function EventRecommendationsEmail({
   );
 }
 
+export default EventRecommendationsEmail;
+
 EventRecommendationsEmail.PreviewProps = {
   userName: "Erick Nathan",
 } as EventRecommendationsEmailProps;
@@ -146,12 +153,12 @@ const body = {
 const paragraph = {
   fontSize: "16px",
   lineHeight: "26px",
-  opacity: 0.9
+  opacity: 0.9,
 };
 
 const listItem = {
   fontSize: "16px",
-  opacity: 0.9
+  opacity: 0.9,
 };
 
 const link = {
