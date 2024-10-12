@@ -1,15 +1,27 @@
 "use client";
 
-import { EventAnalisysForm } from "./event-analisys-form";
 import { useFormState } from "react-dom";
+import Image from "next/image";
+import { useEffect } from "react";
+import { toast } from "sonner";
+
+import { EventAnalisysForm } from "./event-analisys-form";
 import { sendAnalisysToEmail } from "./actions";
 import { EventAnalisysSubmitted } from "./event-analisys-submitted";
-import Image from "next/image";
 
 export default function EventAnalisysPage() {
-  const [{ isSubmitted }, onSubmit] = useFormState(sendAnalisysToEmail, {
+  const [{ isSubmitted, error }, onSubmit] = useFormState(sendAnalisysToEmail, {
     isSubmitted: false,
+    error: undefined,
   });
+
+  useEffect(() => {
+    if (error) {
+      toast.error(
+        "Ocorreu um erro ao enviar o formulário. Tente novamente mais tarde."
+      );
+    }
+  }, [error]);
 
   return (
     <main className="flex-1 flex items-center justify-center flex-col gap-4">
