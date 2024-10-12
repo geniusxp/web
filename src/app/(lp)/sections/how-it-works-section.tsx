@@ -45,7 +45,7 @@ export function HowItWorksSection() {
         nossos principais recursos:
       </p>
 
-      <div className="grid grid-cols-2 gap-14">
+      <div className="grid lg:grid-cols-2 gap-14">
         <div className="grid gap-8">
           {steps.map(({ icon: Icon, title, description }, index) => (
             <button
