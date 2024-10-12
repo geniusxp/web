@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     description: "Uma experiência genial em seus eventos",
     title: "GeniusXP",
   },
+  metadataBase: new URL("https://geniusxp.tech"),
 };
 
 export default function RootLayout({
