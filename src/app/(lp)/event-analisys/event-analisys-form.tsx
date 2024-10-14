@@ -1,11 +1,15 @@
 import { eventSegments } from "@/lib/mocks";
 
-import { Input } from "../../../components/ui/input";
-import { Label } from "../../../components/ui/label";
-import { Button } from "../../../components/ui/button";
-import { Badge } from "../../../components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
-export function EventAnalisysForm() {
+interface EventAnalisysFormProps {
+  event: string;
+}
+
+export function EventAnalisysForm({ event }: EventAnalisysFormProps) {
   return (
     <div className="grid gap-4">
       <header className="space-y-1.5">
@@ -14,7 +18,7 @@ export function EventAnalisysForm() {
         </h1>
         <p className="text-sm text-muted-foreground">
           Preencha o formulário abaixo para receber recomendações personalizadas
-          diretamente da nossa IA para o FIAP NEXT 2024!
+          diretamente da nossa IA para o {event}!
         </p>
       </header>
 

@@ -46,7 +46,11 @@ export default function EventAnalisysPage({ searchParams }: { searchParams: { ev
         action={onSubmit}
         className="shadow-lg sm:max-w-lg w-full min-h-[70vh] sm:border bg-background/50 backdrop-blur p-6 sm:rounded-lg flex flex-col gap-4 animate-in slide-in-from-bottom-8 fade-in duration-1000 relative"
       >
-        {isSubmitted ? <EventAnalisysSubmitted /> : <EventAnalisysForm />}
+        {isSubmitted ? (
+          <EventAnalisysSubmitted />
+        ) : (
+          <EventAnalisysForm event={searchParams.event} />
+        )}
       </form>
       <div className="h-16" />
     </main>
