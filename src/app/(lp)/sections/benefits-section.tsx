@@ -1,11 +1,17 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 import { EngagementAnimation } from "@/components/app/engagement-animation";
 import { IntegrationsAnimation } from "@/components/app/integrations-animation";
 import { BentoCard } from "@/components/ui/bento-card";
 import { Calendar } from "@/components/ui/calendar";
+import { WaitlistDialog } from "../waitlist/waitlist-dialog";
 
 export function BenefitsSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section
       id="benefits"
@@ -25,12 +31,14 @@ export function BenefitsSection() {
           description="Resumos de palestras, relatórios com insights e mais, tudo impulsionado por Inteligência Artificial."
           icon="/emotions/the-robot.png"
           className="md:row-span-2"
+          setReadMoreOpen={setIsModalOpen}
         />
         <BentoCard
           title="Integrações poderosas"
           description="Integração com redes sociais e outras ferramentas para potencializar a experiência do participante."
           icon="/emotions/crystal-ball.png"
           className="md:col-span-2"
+          setReadMoreOpen={setIsModalOpen}
         >
           <div className="flex items-center justify-center absolute inset-x-0 bottom-4 size-full">
             <IntegrationsAnimation />
@@ -41,6 +49,7 @@ export function BenefitsSection() {
           description="Facilite a interação dos participantes em tempo real tornando a experiência mais dinâmica."
           icon="/emotions/raising-hand.png"
           className="md:row-span-2"
+          setReadMoreOpen={setIsModalOpen}
         >
           <div className="absolute w-full [mask-image:linear-gradient(to_top,transparent_10%,#000_60%)] max-md:h-[280px]">
             <EngagementAnimation className="border-none bg-transparent" />
@@ -50,6 +59,7 @@ export function BenefitsSection() {
           title="Evento à moda do participante"
           description="Personalize a experiência do participante com base em suas preferências e comportamentos."
           icon="/emotions/sunglasses.png"
+          setReadMoreOpen={setIsModalOpen}
         >
           <Calendar
             mode="single"
@@ -61,6 +71,7 @@ export function BenefitsSection() {
           title="Aumente sua produtividade"
           description="Automatize tarefas e processos, otimize a gestão de eventos e garanta a segurança dos dados."
           icon="/emotions/speech-bubble.png"
+          setReadMoreOpen={setIsModalOpen}
         >
           <Image
             src="/qrcode.png"
@@ -74,8 +85,11 @@ export function BenefitsSection() {
           title="Avalie e otimize"
           description="Acompanhe o desempenho do seu evento em tempo real e tome decisões mais assertivas."
           icon="/emotions/star.png"
+          setReadMoreOpen={setIsModalOpen}
         />
       </div>
+
+      <WaitlistDialog open={isModalOpen} onOpenChange={setIsModalOpen} />
     </section>
   );
 }

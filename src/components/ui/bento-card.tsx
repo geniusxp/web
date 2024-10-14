@@ -3,8 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRightIcon } from "lucide-react";
-import { WaitlistDialog } from "../app/waitlist-dialog";
-import { useState } from "react";
 import Image from "next/image";
 
 interface BentoCardProps {
@@ -13,6 +11,7 @@ interface BentoCardProps {
   description: string;
   className?: string;
   children?: React.ReactNode;
+  setReadMoreOpen?: (value: boolean) => void;
 }
 
 export function BentoCard({
@@ -21,9 +20,8 @@ export function BentoCard({
   description,
   className,
   children,
+  setReadMoreOpen,
 }: BentoCardProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
     <div
       className={cn(
@@ -46,26 +44,27 @@ export function BentoCard({
           </p>
         </div>
 
-        <div
-          className={cn(
-            "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 pt-0 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
-          )}
-        >
-          <Button
-            variant="ghost"
-            size="sm"
-            className="pointer-events-auto"
-            onClick={() => setIsModalOpen(true)}
+        {setReadMoreOpen && (
+          <div
+            className={cn(
+              "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 pt-0 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+            )}
           >
-            Leia mais
-            <ArrowRightIcon className="ml-2 size-4" />
-          </Button>
-        </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="pointer-events-auto"
+              onClick={() => setReadMoreOpen(true)}
+            >
+              Leia mais
+              <ArrowRightIcon className="ml-2 size-4" />
+            </Button>
+          </div>
+        )}
       </div>
       <div className="absolute inset-0 z-0 opacity-75 transition-all duration-300 ease-out group-hover:scale-[102%] group-hover:opacity-100">
         {children}
       </div>
-      <WaitlistDialog open={isModalOpen} onOpenChange={setIsModalOpen} />
     </div>
   );
 }

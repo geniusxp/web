@@ -3,6 +3,7 @@
 import { render } from "@react-email/components";
 import { EventRecommendationsEmail } from "@/components/emails/event-recommendations";
 import { mailTransporter } from "@/lib/email";
+import { addUserToNewsletter } from "@/data/newsletter";
 
 export async function sendAnalisysToEmail(
   _: any,
@@ -22,12 +23,15 @@ export async function sendAnalisysToEmail(
   );
 
   try {
-    await mailTransporter.sendMail({
-      from: "GeniusXP <contato@geniusxp.tech>",
-      to: email,
-      subject: "Recomendações do GeniusXP para o FIAP NEXT 2024!",
-      html: emailHtml
-    });
+    await Promise.all([
+      mailTransporter.sendMail({
+        from: "GeniusXP <contato@geniusxp.tech>",
+        to: email,
+        subject: "Recomendações do GeniusXP para o FIAP NEXT 2024!",
+        html: emailHtml,
+      }),
+      addUserToNewsletter({ name: userName, email }),
+    ]);
 
     return {
       isSubmitted: true,

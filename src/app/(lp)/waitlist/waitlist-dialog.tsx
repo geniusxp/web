@@ -1,5 +1,10 @@
 "use client";
 
+import { useState } from "react";
+import { useFormState } from "react-dom";
+import Image from "next/image";
+import { ArrowRightIcon } from "lucide-react";
+
 import {
   Dialog,
   DialogContent,
@@ -10,11 +15,11 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ArrowRightIcon } from "lucide-react";
-import { ConfettiButton } from "../animations/animated-confettis";
-import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Confetti } from "@/components/animations/animated-confettis";
+
+import { addToNewsletter } from "./actions";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 interface DialogProps {
   children?: React.ReactNode;
@@ -26,13 +31,9 @@ export function WaitlistDialog({ children, open, onOpenChange }: DialogProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-
-    setIsSubmitted(true);
-  }
+  const [{ isSubmitted }, onSubmit] = useFormState(addToNewsletter, {
+    isSubmitted: false,
+  });
 
   return (
     <>
@@ -43,12 +44,13 @@ export function WaitlistDialog({ children, open, onOpenChange }: DialogProps) {
           {isSubmitted ? (
             <>
               <Image
-                src="/happy-gif.webp"
+                src="/yeah-gif.webp"
                 width={300}
                 height={200}
                 alt=""
                 className="aspect-[14/9] w-full rounded-lg object-cover"
               />
+
               <DialogHeader>
                 <DialogTitle>Obrigado!</DialogTitle>
                 <DialogDescription>
@@ -56,6 +58,11 @@ export function WaitlistDialog({ children, open, onOpenChange }: DialogProps) {
                   assim que a GeniusXP estiver disponível.
                 </DialogDescription>
               </DialogHeader>
+
+              <Confetti
+                manualstart={false}
+                className="absolute inset-0 size-full pointer-events-none"
+              />
             </>
           ) : (
             <>
@@ -66,7 +73,7 @@ export function WaitlistDialog({ children, open, onOpenChange }: DialogProps) {
                   notificado quando a GeniusXP estiver disponível.
                 </DialogDescription>
               </DialogHeader>
-              <form onSubmit={handleSubmit} className="grid gap-4 w-full">
+              <form action={onSubmit} className="grid gap-4 w-full">
                 <fieldset className="space-y-1.5">
                   <Label>Nome</Label>
                   <Input
@@ -91,17 +98,21 @@ export function WaitlistDialog({ children, open, onOpenChange }: DialogProps) {
                   />
                 </fieldset>
 
-                <ConfettiButton
-                  className={cn(
-                    "relative overflow-visible",
-                    isSubmitted && "pointer-events-none"
-                  )}
-                  disabled={!name || !email || name.length < 3 || !email.includes("@") || !email.includes(".") || email.length < 5}
+                <Button
+                  className={cn("relative overflow-visible")}
+                  disabled={
+                    !name ||
+                    !email ||
+                    name.length < 3 ||
+                    !email.includes("@") ||
+                    !email.includes(".") ||
+                    email.length < 5
+                  }
                   type="submit"
                 >
                   Entrar na lista de espera
                   <ArrowRightIcon className="size-4 absolute right-4 top-1/2 -translate-y-1/2" />
-                </ConfettiButton>
+                </Button>
               </form>
             </>
           )}
