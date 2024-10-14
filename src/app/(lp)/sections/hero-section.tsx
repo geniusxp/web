@@ -1,12 +1,17 @@
-import { ArrowRightIcon, SparklesIcon, VideoIcon } from "lucide-react";
+import { MailIcon, SparklesIcon, VideoIcon } from "lucide-react";
+import Link from "next/link";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { DemoDialog } from "@/components/app/demo-dialog";
-import Link from "next/link";
 import { AnimatedGradientText } from "@/components/animations/animated-gradient-text";
+import { WaitlistDialog } from "@/app/(lp)/waitlist/waitlist-dialog";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  event?: string;
+}
+
+export function HeroSection({ event }: HeroSectionProps) {
   return (
     <section className="flex flex-col container min-h-screen">
       <header className="flex items-center justify-between py-4">
@@ -44,12 +49,21 @@ export function HeroSection() {
                 Assistir a demo
               </Button>
             </DemoDialog>
-            <Button className="max-md:w-full" asChild>
-              <Link href="/event-analisys">
-                <SparklesIcon className="size-4 mr-2" />
-                Obter experiência no FIAP NEXT
-              </Link>
-            </Button>
+            {event ? (
+              <Button className="max-md:w-full" asChild>
+                <Link href={`/event-analisys?event=${event}+2024`}>
+                  <SparklesIcon className="size-4 mr-2" />
+                  Obter experiência no {event}
+                </Link>
+              </Button>
+            ) : (
+              <WaitlistDialog>
+                <Button className="max-md:w-full">
+                  <MailIcon className="size-4 mr-2" />
+                  Entrar na lista de espera
+                </Button>
+              </WaitlistDialog>
+            )}
           </div>
         </div>
         <div className="flex items-center max-lg:flex-col animate-in slide-in-from-bottom-8 fade-in duration-700 max-lg:py-12">

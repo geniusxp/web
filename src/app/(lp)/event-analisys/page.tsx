@@ -8,11 +8,16 @@ import { toast } from "sonner";
 import { EventAnalisysForm } from "./event-analisys-form";
 import { sendAnalisysToEmail } from "./actions";
 import { EventAnalisysSubmitted } from "./event-analisys-submitted";
+import { redirect } from "next/navigation";
 
-export default function EventAnalisysPage() {
+export default function EventAnalisysPage({ searchParams }: { searchParams: { event?: string } }) {
+  if (!searchParams.event) {
+    return redirect("/");
+  }
+
   const [{ isSubmitted, error }, onSubmit] = useFormState(sendAnalisysToEmail, {
     isSubmitted: false,
-    error: undefined,
+    event: searchParams.event,
   });
 
   useEffect(() => {

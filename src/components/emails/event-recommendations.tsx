@@ -15,19 +15,21 @@ import * as React from "react";
 
 interface EventRecommendationsEmailProps {
   userName: string;
+  event: string;
 }
 
 const websiteUrl = "https://www.geniusxp.tech";
 
 export function EventRecommendationsEmail({
   userName,
+  event
 }: EventRecommendationsEmailProps) {
   return (
     <Html>
       <Head />
       <Preview>
         Olá, {userName}! Estamos super felizes por você estar participando do
-        FIAP Next 2024 com o apoio do GeniusXP!
+        {event} com o apoio do GeniusXP!
       </Preview>
       <Body style={main}>
         <Container style={container}>
@@ -38,17 +40,17 @@ export function EventRecommendationsEmail({
             alt="GeniusXP"
           />
           <Heading style={heading}>
-            Suas recomendações para o FIAP NEXT 2024 estão disponíveis! 🤩
+            Suas recomendações para o {event} estão disponíveis! 🤩
           </Heading>
           <Section style={body}>
             <Text style={paragraph}>
               Olá, <strong>{userName}</strong>!
             </Text>
             <Text style={paragraph}>
-              Estamos super felizes por você estar participando do FIAP Next
-              2024 com o apoio do{" "}
+              Estamos super felizes por você estar participando do{" "}
+              <strong>{event}</strong> com o apoio do{" "}
               <Link style={link} href={websiteUrl}>
-                GeniusXP
+                <strong>GeniusXP</strong>
               </Link>
               ! Com base nos seus interesses, aqui estão as recomendações
               personalizadas dos estandes e projetos que mais combinam com o que
@@ -83,11 +85,12 @@ export function EventRecommendationsEmail({
             <Text style={paragraph}>
               <strong>💡 Dica GeniusXP</strong>: Aproveite ao máximo o evento
               visitando esses estandes e projetos, participe das atividades e
-              fique atento às oportunidades de networking!
+              fique atento às oportunidades de networking! Ah, e não se esqueça
+              de visitar-nos na ilha 53 para saber mais sobre o GeniusXP.
             </Text>
           </Section>
           <Text style={paragraph}>
-            Estamos ansiosos para ver você explorando o FIAP NEXT 2024 com
+            Estamos ansiosos para ver você explorando o {event} com
             recomendações inteligentes que vão elevar sua experiência ao próximo
             nível!{" "}
             <Link style={link} href={websiteUrl}>
@@ -124,6 +127,7 @@ export default EventRecommendationsEmail;
 
 EventRecommendationsEmail.PreviewProps = {
   userName: "Erick Nathan",
+  event: "FIAP NEXT 2024",
 } as EventRecommendationsEmailProps;
 
 const main = {

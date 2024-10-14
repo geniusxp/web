@@ -6,19 +6,17 @@ import { mailTransporter } from "@/lib/email";
 import { addUserToNewsletter } from "@/data/newsletter";
 
 export async function sendAnalisysToEmail(
-  _: any,
+  defaultData: { event: string },
   formData: FormData
-): Promise<{
-  isSubmitted: boolean;
-  data?: any;
-  error?: any;
-}> {
+) {
+  const event = defaultData.event;
   const userName = formData.get("name") as string;
   const email = formData.get("email") as string;
 
   const emailHtml = await render(
     EventRecommendationsEmail.bind(null, {
       userName,
+      event
     })()
   );
 
@@ -27,7 +25,7 @@ export async function sendAnalisysToEmail(
       mailTransporter.sendMail({
         from: "GeniusXP <contato@geniusxp.tech>",
         to: email,
-        subject: "Recomendações do GeniusXP para o FIAP NEXT 2024!",
+        subject: `Recomendações do GeniusXP para o ${event}!`,
         html: emailHtml,
       }),
       addUserToNewsletter({ name: userName, email }),
@@ -35,6 +33,7 @@ export async function sendAnalisysToEmail(
 
     return {
       isSubmitted: true,
+      event
     };
   } catch (error) {
     console.error(error);
@@ -42,6 +41,7 @@ export async function sendAnalisysToEmail(
     return {
       error: (error as Error).message,
       isSubmitted: false,
+      event
     };
   }
 }
