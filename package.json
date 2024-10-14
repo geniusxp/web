@@ -34,6 +34,7 @@
     "date-fns": "^4.1.0",
     "framer-motion": "^11.11.4",
     "lucide-react": "^0.447.0",
+    "mongodb": "^6.9.0",
     "next": "14.2.14",
     "next-themes": "^0.3.0",
     "nodemailer": "^6.9.15",
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@types/canvas-confetti": "^1.6.4",
+    "@types/mongodb": "^4.0.7",
     "@types/node": "^22.7.4",
     "@types/nodemailer": "^6.4.16",
     "@types/react": "^18.3.10",
