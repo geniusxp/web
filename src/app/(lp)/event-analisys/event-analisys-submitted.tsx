@@ -3,7 +3,12 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-export function EventAnalisysSubmitted() {
+
+interface EventAnalisysSubmittedProps {
+  event: string;
+}
+
+export function EventAnalisysSubmitted({ event }: EventAnalisysSubmittedProps) {
   return (
     <div className="flex flex-col gap-4 flex-1">
       <Image
@@ -21,8 +26,7 @@ export function EventAnalisysSubmitted() {
         </h1>
         <p className="text-sm text-muted-foreground">
           Nossa Inteligência Artificial está preparando algo muito especial para
-          você! Em breve você receberá recomendações personalizadas para o FIAP
-          NEXT 2024.
+          você! Em breve você receberá recomendações personalizadas para o {event}.
         </p>
       </footer>
       <Button

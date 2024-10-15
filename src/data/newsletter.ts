@@ -7,7 +7,6 @@ export async function addUserToNewsletter({
   name: string;
   email: string;
 }) {
-  console.log({ name, email });
   try {
     const { db } = await connectToDatabase();
 

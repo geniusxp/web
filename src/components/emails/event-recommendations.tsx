@@ -115,7 +115,7 @@ export function EventRecommendationsEmail({
             }}
           />
           <Text style={footer}>
-            © 2024 GeniusXP. Todos os direitos reservados.
+            © {new Date().getFullYear()} GeniusXP. Todos os direitos reservados.
           </Text>
         </Container>
       </Body>
@@ -184,9 +184,10 @@ const footer = {
 };
 
 const tip = {
-  backgroundColor: "#09090B44",
+  backgroundColor: "#2F2F2F45",
   padding: "0px 16px",
   borderRadius: "8px",
   marginTop: "24px",
   marginBottom: "24px",
+  border: "1px solid #444",
 };

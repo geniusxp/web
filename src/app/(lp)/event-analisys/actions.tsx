@@ -16,7 +16,7 @@ export async function sendAnalisysToEmail(
   const emailHtml = await render(
     EventRecommendationsEmail.bind(null, {
       userName,
-      event
+      event,
     })()
   );
 
@@ -33,7 +33,7 @@ export async function sendAnalisysToEmail(
 
     return {
       isSubmitted: true,
-      event
+      event,
     };
   } catch (error) {
     console.error(error);
@@ -41,7 +41,7 @@ export async function sendAnalisysToEmail(
     return {
       error: (error as Error).message,
       isSubmitted: false,
-      event
+      event,
     };
   }
 }

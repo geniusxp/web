@@ -47,7 +47,7 @@ export default function EventAnalisysPage({ searchParams }: { searchParams: { ev
         className="shadow-lg sm:max-w-lg w-full min-h-[70vh] sm:border bg-background/50 backdrop-blur p-6 sm:rounded-lg flex flex-col gap-4 animate-in slide-in-from-bottom-8 fade-in duration-1000 relative"
       >
         {isSubmitted ? (
-          <EventAnalisysSubmitted />
+          <EventAnalisysSubmitted event={searchParams.event} />
         ) : (
           <EventAnalisysForm event={searchParams.event} />
         )}
