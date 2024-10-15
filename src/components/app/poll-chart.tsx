@@ -23,11 +23,12 @@ const chartConfig = {
 interface PollChartProps {
   title: string;
   data: { option: string; amount: number }[];
+  className?: string;
 }
 
-export function PollChart({ title, data }: PollChartProps) {
+export function PollChart({ title, data, className }: PollChartProps) {
   return (
-    <Card>
+    <Card className={className}>
       <CardHeader className="p-3 pb-0">
         <CardTitle className="font-semibold text-sm">{title}</CardTitle>
       </CardHeader>

@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { PlusIcon } from "lucide-react";
 import type { ComponentProps } from "react";
-import { pollsData } from "../../../../lib/mocks";
+import { pollsData } from "@/lib/mocks";
 
 export function PollsSection(props: ComponentProps<typeof Card>) {
   return (
