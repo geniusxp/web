@@ -8,6 +8,8 @@ import { IntegrationsAnimation } from "@/components/app/integrations-animation";
 import { BentoCard } from "@/components/ui/bento-card";
 import { Calendar } from "@/components/ui/calendar";
 import { WaitlistDialog } from "../waitlist/waitlist-dialog";
+import { IAMessageAnimation } from "@/components/app/ia-message-animation";
+import { AnimatedList } from "@/components/animations/animated-list";
 
 export function BenefitsSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,7 +34,24 @@ export function BenefitsSection() {
           icon="/emotions/the-robot.png"
           className="md:row-span-2"
           setReadMoreOpen={setIsModalOpen}
-        />
+        >
+          <div className="grid p-4 gap-4">
+            <AnimatedList
+              delay={1000}
+              clearOnEnd={false}
+              className="flex-col-reverse"
+            >
+              <p className="border bg-primary/25 border-primary/50 text-secondary-foreground/75 shadow p-4 rounded-lg text-sm leading-relaxed max-w-[95%] ml-auto text-end">
+                Como foi a sessão sobre IA generativa?
+              </p>
+              <IAMessageAnimation
+                from="Genius"
+                message="O pitch da sessão abordou como a IA generativa está revolucionando diversas indústrias, desde a criação de conteúdo até o desenvolvimento de novos produtos. O palestrante, João Almeida, CEO da InnovAI, apresentou um caso prático em que sua empresa desenvolveu uma ferramenta de IA generativa capaz de criar protótipos de design de produto de forma totalmente automatizada, reduzindo o tempo de desenvolvimento em 60%."
+                avatar="/genius.png"
+              />
+            </AnimatedList>
+          </div>
+        </BentoCard>
         <BentoCard
           title="Integrações poderosas"
           description="Integração com redes sociais e outras ferramentas para potencializar a experiência do participante."
