@@ -3,28 +3,31 @@
 import { SparklesIcon, UploadIcon, ZapIcon } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const steps = [
   {
     icon: UploadIcon,
-    title: "1. Tópico 1",
+    title: "1. Avalie métricas e gere insights",
     description:
-      "Simply upload your data to our secure platform. We support various file formats and data types to ensure a seamless integration with your existing systems.",
+      "Monitore dados importantes do evento, como vendas, interações e emoções. Obtenha insights valiosos que ajudam a entender melhor o comportamento dos participantes e a identificar tendências.",
     image: "/prints/metrics.png",
+    className: "border",
   },
   {
     icon: ZapIcon,
-    title: "2. Tópico 2",
+    title: "2. Gerencie os dados com IA",
     description:
-      "Our advanced AI algorithms automatically process and analyze your data, extracting valuable insights and patterns that would be difficult to identify manually.",
+      "Utilize inteligência artificial para processar e organizar os dados automaticamente. A IA identifica padrões e gera relatórios que facilitam a tomada de decisões estratégicas.",
     image: "/prints/speakers.png",
+    className: "border",
   },
   {
     icon: SparklesIcon,
-    title: "3. Tópico 3",
+    title: "3. Ofereça melhores experiências",
     description:
-      "Receive clear, actionable insights and recommendations based on the AI analysis. Use these insights to make data-driven decisions and improve your business strategies.",
-    image: "/prints/schedule.png",
+      "Personalize a experiência dos participantes com base nos insights gerados. Faça ajustes em tempo real e ofereça recomendações que tornam o evento mais interativo e envolvente.",
+    image: "/prints/experience.png",
   },
 ];
 
@@ -91,12 +94,15 @@ export function HowItWorksSection() {
           ))}
         </div>
         <div className="flex items-center justify-center">
-          {steps.map(({ image }, index) =>
+          {steps.map(({ image, className }, index) =>
             activeStep !== index ? null : (
               <motion.img
-                src={steps[activeStep].image}
+                src={image}
                 alt=""
-                className="w-full aspect-video rounded-lg border object-cover"
+                className={cn(
+                  "w-full aspect-video rounded-lg object-cover",
+                  className
+                )}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
