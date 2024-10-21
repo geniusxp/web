@@ -69,7 +69,10 @@ export function EventRecommendationsEmail({
                 <div style={{ marginLeft: "20px" }}>
                   <Text style={paragraph}>{project.descricao}</Text>
                   {project.local ? (
-                    <Text style={paragraph}>• Local: {project.local}</Text>
+                    <Text style={paragraph}>
+                      • Local: {Number.isInteger(project.local) ? "Ilha" : null}{" "}
+                      {project.local}
+                    </Text>
                   ) : null}
                   {project.horario ? (
                     <Text style={paragraph}>• Horário: {project.horario}</Text>

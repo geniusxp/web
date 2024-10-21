@@ -4,8 +4,8 @@ export interface Project {
   curso: string;
   tipo: string;
   segmentos: string | string[];
-  url: string;
-  local: string;
-  horario: string;
+  url?: string;
+  local?: string | number;
+  horario?: string;
 }
 
