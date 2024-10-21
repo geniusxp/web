@@ -11,7 +11,7 @@ export function EventAnalisysSubmitted({ event }: EventAnalisysSubmittedProps) {
   return (
     <div className="flex flex-col gap-4 flex-1">
       <Image
-        src="/happy-gif.webp"
+        src={`/gifs/happy/${Math.floor(Math.random() * 9) + 1}.webp`}
         width={300}
         height={200}
         alt=""

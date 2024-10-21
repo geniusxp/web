@@ -44,7 +44,7 @@ export function WaitlistDialog({ children, open, onOpenChange }: DialogProps) {
           {isSubmitted ? (
             <>
               <Image
-                src="/yeah-gif.webp"
+                src={`/gifs/happy/${Math.floor(Math.random() * 9) + 1}.webp`}
                 width={300}
                 height={200}
                 alt=""
