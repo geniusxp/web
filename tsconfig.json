@@ -17,6 +17,7 @@
         "name": "next"
       }
     ],
+    "target": "es2018",
     "paths": {
       "@/*": ["./src/*"]
     }

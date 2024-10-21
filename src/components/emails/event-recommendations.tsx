@@ -1,3 +1,4 @@
+import type { Project } from "@/models/Project";
 import {
   Body,
   Container,
@@ -16,13 +17,15 @@ import * as React from "react";
 interface EventRecommendationsEmailProps {
   userName: string;
   event: string;
+  recommendations: Project[];
 }
 
 const websiteUrl = "https://www.geniusxp.tech";
 
 export function EventRecommendationsEmail({
   userName,
-  event
+  event,
+  recommendations,
 }: EventRecommendationsEmailProps) {
   return (
     <Html>
@@ -58,28 +61,30 @@ export function EventRecommendationsEmail({
             </Text>
 
             <Text style={heading2}>🔥 Destaques selecionados para você:</Text>
-            <ul>
-              <li style={listItem}>
-                <strong>Projeto 1</strong> - Conheça o projeto de realidade
-                aumentada que revoluciona a educação.
-              </li>
-              <li style={listItem}>
-                <strong>Projeto 2</strong> - Descubra como a inteligência
-                artificial está transformando a saúde.
-              </li>
-              <li style={listItem}>
-                <strong>Projeto 3</strong> - Participe de uma experiência
-                imersiva com tecnologias de ponta.
-              </li>
-              <li style={listItem}>
-                <strong>Projeto 4</strong> - Conheça o projeto de
-                sustentabilidade que está mudando o mundo.
-              </li>
-              <li style={listItem}>
-                <strong>Projeto 5</strong> - Explore a nova plataforma de
-                streaming que vai revolucionar o entretenimento.
-              </li>
-            </ul>
+            {recommendations.map((project, index) => (
+              <div key={project.nome}>
+                <Text style={heading3}>
+                  {index + 1}. {project.nome}
+                </Text>
+                <div style={{ marginLeft: "20px" }}>
+                  <Text style={paragraph}>{project.descricao}</Text>
+                  {project.local ? (
+                    <Text style={paragraph}>• Local: {project.local}</Text>
+                  ) : null}
+                  {project.horario ? (
+                    <Text style={paragraph}>• Horário: {project.horario}</Text>
+                  ) : null}
+                  {project.url ? (
+                    <Text style={paragraph}>
+                      • Saiba mais sobre o projeto{" "}
+                      <Link style={link} href={project.url}>
+                        clicando aqui
+                      </Link>
+                    </Text>
+                  ) : null}
+                </div>
+              </div>
+            ))}
           </Section>
           <Section style={tip}>
             <Text style={paragraph}>
@@ -128,6 +133,40 @@ export default EventRecommendationsEmail;
 EventRecommendationsEmail.PreviewProps = {
   userName: "Erick Nathan",
   event: "FIAP NEXT 2024",
+  recommendations: [
+    {
+      nome: "Projeto 1",
+      descricao:
+        "Conheça o projeto de realidade aumentada que revoluciona a educação.",
+      horario: "10:00 - 12:00",
+      local: "Ilha 34",
+    },
+    {
+      nome: "Projeto 2",
+      descricao:
+        "Descubra como a inteligência artificial está transformando a saúde.",
+      horario: "14:00 - 16:00",
+      local: "Ilha 21",
+      url: "https://www.geniusxp.tech/projeto-2",
+    },
+    {
+      nome: "Projeto 3",
+      descricao:
+        "Participe de uma experiência imersiva com tecnologias de ponta.",
+    },
+    {
+      nome: "Projeto 4",
+      descricao:
+        "Conheça o projeto de sustentabilidade que está mudando o mundo.",
+      horario: "16:00 - 18:00",
+    },
+    {
+      nome: "Projeto 5",
+      descricao:
+        "Explore a nova plataforma de streaming que vai revolucionar o entretenimento.",
+      local: "Ilha 53",
+    },
+  ],
 } as EventRecommendationsEmailProps;
 
 const main = {
@@ -153,6 +192,11 @@ const heading2 = {
   marginTop: "32px",
 };
 
+const heading3 = {
+  fontSize: "18px",
+  fontWeight: "bold",
+};
+
 const body = {
   margin: "24px 0",
 };
@@ -161,15 +205,11 @@ const paragraph = {
   fontSize: "16px",
   lineHeight: "26px",
   opacity: 0.9,
-};
-
-const listItem = {
-  fontSize: "16px",
-  opacity: 0.9,
+  fontWeight: 400,
 };
 
 const link = {
-  color: "#8B5CF6",
+  color: "#946bf2",
 };
 
 const hr = {
