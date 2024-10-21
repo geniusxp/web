@@ -13,10 +13,10 @@ export function EventAnalisysForm({ event }: EventAnalisysFormProps) {
   return (
     <div className="grid gap-4">
       <header className="space-y-1.5">
-        <h1 className="text-lg font-semibold leading-none tracking-tight">
-          <span className="text-2xl">🤩</span> Que bom ter você aqui!
+        <h1 className="sm:text-lg font-semibold leading-none tracking-tight">
+          <span className="text-xl sm:text-2xl">🤩</span> Que bom ter você aqui!
         </h1>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-foreground/80">
           Preencha o formulário abaixo para receber recomendações personalizadas
           diretamente da nossa IA para o {event}!
         </p>
@@ -46,15 +46,18 @@ export function EventAnalisysForm({ event }: EventAnalisysFormProps) {
       </fieldset>
 
       <fieldset className="grid space-y-1.5 -mx-2">
-        <Label htmlFor="interests">Segmentos de interesse</Label>
+        <Label htmlFor="interests">
+          Segmentos de interesse{" "}
+          <small className="text-muted-foreground">(No máximo 5)</small>
+        </Label>
         <div className="flex flex-wrap gap-3 justify-center">
           {eventSegments.map((segment) => (
-            <label key={segment.id}>
+            <label key={segment.value}>
               <input
                 type="checkbox"
                 className="sr-only peer"
                 name="interests"
-                value={segment.id}
+                value={segment.value}
               />
               <Badge
                 variant="secondary"
@@ -68,7 +71,7 @@ export function EventAnalisysForm({ event }: EventAnalisysFormProps) {
       </fieldset>
 
       <Button type="submit" className="w-full">
-        Enviar
+        Obter recomendações 🚀
       </Button>
     </div>
   );

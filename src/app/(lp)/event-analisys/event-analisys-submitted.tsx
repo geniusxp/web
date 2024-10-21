@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-
 interface EventAnalisysSubmittedProps {
   event: string;
 }
@@ -20,13 +19,14 @@ export function EventAnalisysSubmitted({ event }: EventAnalisysSubmittedProps) {
       />
 
       <footer className="space-y-1.5">
-        <h1 className="text-lg font-semibold leading-none tracking-tight">
-          <span className="text-2xl">🤩</span>
-          Fique de olho na sua caixa de entrada!
+        <h1 className="sm:text-lg font-semibold leading-none tracking-tight">
+          <span className="text-xl sm:text-2xl">🤩</span> Fique de olho na sua
+          caixa de entrada!
         </h1>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-foreground/80">
           Nossa Inteligência Artificial está preparando algo muito especial para
-          você! Em breve você receberá recomendações personalizadas para o {event}.
+          você! Em breve você receberá recomendações personalizadas para o{" "}
+          {event}.
         </p>
       </footer>
       <Button

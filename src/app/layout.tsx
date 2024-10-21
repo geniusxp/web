@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Providers } from "./providers";
 import { keywords } from "@/lib/seo";
+import { cn } from "@/lib/utils";
 
 const fontSans = Poppins({
   weight: ["300", "400", "500", "600", "700"],
@@ -35,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="dark" suppressHydrationWarning>
-      <body className={`${fontSans.className} antialiased flex relative `}>
+      <body className={cn(fontSans.className, "antialiased flex relative")}>
         <Providers>{children}</Providers>
       </body>
     </html>

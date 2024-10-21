@@ -35,10 +35,10 @@ export function BenefitsSection() {
           title="Potencialize Experiências"
           description="Resumos de palestras, relatórios com insights e mais, tudo impulsionado por Inteligência Artificial."
           icon="/emotions/the-robot.png"
-          className="md:row-span-2"
+          className="md:row-span-2 md:max-lg:col-span-2"
           setReadMoreOpen={setIsModalOpen}
         >
-          <div className="grid p-4 gap-4">
+          <div className="grid p-4 gap-4 max-lg:[mask-image:linear-gradient(to_top,transparent_30%,#000_80%)]">
             <AnimatedList
               delay={1000}
               clearOnEnd={false}
@@ -108,22 +108,22 @@ export function BenefitsSection() {
           description="Acompanhe o desempenho do seu evento em tempo real e tome decisões mais assertivas."
           icon="/emotions/star.png"
           setReadMoreOpen={setIsModalOpen}
+          className="md:max-lg:col-span-2"
         >
           <div className="[mask-image:linear-gradient(to_top,transparent_10%,#000_70%)]">
-
-          <Marquee
-            pauseOnHover
-            className="[--duration:20s] scale-[85%] overflow-visible"
-          >
-            {pollsData.map((poll) => (
-              <PollChart
-                title={poll.title}
-                data={poll.data}
-                key={poll.title}
-                className="pointer-events-none min-w-64"
-              />
-            ))}
-          </Marquee>
+            <Marquee
+              pauseOnHover
+              className="[--duration:20s] scale-[85%] overflow-visible"
+            >
+              {pollsData.map((poll) => (
+                <PollChart
+                  title={poll.title}
+                  data={poll.data}
+                  key={poll.title}
+                  className="pointer-events-none min-w-64"
+                />
+              ))}
+            </Marquee>
           </div>
         </BentoCard>
       </div>
