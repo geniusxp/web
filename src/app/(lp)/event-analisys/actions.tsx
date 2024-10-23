@@ -21,9 +21,9 @@ export async function sendAnalisysToEmail(
     .toLowerCase()
     .replace(" ", "-")}/${email}`;
 
-  if (interests.length > 5) {
+  if (interests.length === 0 || interests.length > 5) {
     return {
-      error: "Selecione até 5 segmentos de interesse.",
+      error: "Selecione de 1 a 5 segmentos de interesse.",
       isSubmitted: false,
       event,
     };
