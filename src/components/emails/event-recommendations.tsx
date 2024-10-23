@@ -89,7 +89,7 @@ export function EventRecommendationsEmail({
               </div>
             ))}
           </Section>
-          <Section style={tip}>
+          <Section style={tip} id="tip">
             <Text style={paragraph}>
               <strong>💡 Dica GeniusXP</strong>: Aproveite ao máximo o evento
               visitando esses estandes e projetos, participe das atividades e

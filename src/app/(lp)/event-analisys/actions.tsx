@@ -48,26 +48,35 @@ export async function sendAnalisysToEmail(
   );
 
   try {
-    await Promise.all([
-      mailTransporter.sendMail({
-        from: "GeniusXP <contato@geniusxp.tech>",
-        to: email,
-        subject: `Recomendações do GeniusXP para o ${event}!`,
-        html: emailHtml,
-      }),
-      addUserToNewsletter({ name: userName, email }),
-    ]);
-
     cookies().set(COOKIE_NAME, "true", {
       maxAge: 60 * 5, // 5 minutes
     });
+
+    await Promise.all([
+      mailTransporter.sendMail({
+          from: "GeniusXP <contato@geniusxp.tech>",
+          to: email,
+          subject: `Recomendações do GeniusXP para o ${event}!`,
+          html: emailHtml,
+        })
+        .catch((error) => {
+          throw new EmailError("Ocorreu um erro ao enviar o email.", emailHtml);
+        }),
+      addUserToNewsletter({ name: userName, email }),
+    ]);
 
     return {
       isSubmitted: true,
       event,
     };
   } catch (error) {
-    console.error(error);
+    if (error instanceof EmailError) {
+      return {
+        isSubmitted: false,
+        event,
+        html: error.emailHtml,
+      };
+    }
 
     return {
       error:
@@ -75,5 +84,12 @@ export async function sendAnalisysToEmail(
       isSubmitted: false,
       event,
     };
+  }
+}
+
+class EmailError extends Error {
+  constructor(message: string, public emailHtml: string) {
+    super(message);
+    this.name = "EmailError";
   }
 }
