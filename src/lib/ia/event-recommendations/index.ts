@@ -23,7 +23,7 @@ export function getEventRecommendations(event: string, interests: string[]) {
         similaridade: getSimilarity(interests, segmentsArray),
       };
     })
+    .sort(() => Math.random() - 0.5)
     .sort((a, b) => (b.similaridade ?? 0) - (a.similaridade ?? 0))
-    .filter((projeto) => (projeto.similaridade ?? 0) > 0)
     .slice(0, 5);
 }
