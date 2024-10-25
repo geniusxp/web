@@ -89,6 +89,13 @@ export function EventRecommendationsEmail({
               </div>
             ))}
           </Section>
+          <Text style={paragraph}>
+            Não sabe onde ficam os estandes e projetos recomendados? Não se
+            preocupe! O mapa completo do evento está disponível{" "}
+            <Link style={link} href="https://www.fiap.com.br/next/guia/mapa">
+              aqui
+            </Link>
+          </Text>
           <Section style={tip} id="tip">
             <Text style={paragraph}>
               <strong>💡 Dica GeniusXP</strong>: Aproveite ao máximo o evento
@@ -187,21 +194,25 @@ const container = {
 const heading = {
   fontSize: "28px",
   fontWeight: "bold",
+  color: "#FFFFFF",
 };
 
 const heading2 = {
   fontSize: "24px",
   fontWeight: "bold",
   marginTop: "32px",
+  color: "#FFFFFF",
 };
 
 const heading3 = {
   fontSize: "18px",
   fontWeight: "bold",
+  color: "#FFFFFF",
 };
 
 const body = {
   margin: "24px 0",
+  color: "#FFFFFF",
 };
 
 const paragraph = {
@@ -209,6 +220,7 @@ const paragraph = {
   lineHeight: "26px",
   opacity: 0.9,
   fontWeight: 400,
+  color: "#FFFFFF",
 };
 
 const link = {
@@ -233,4 +245,5 @@ const tip = {
   marginTop: "24px",
   marginBottom: "24px",
   border: "1px solid #444",
+  color: "#FFFFFF",
 };
