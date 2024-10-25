@@ -48,7 +48,7 @@ const questions = [
 export function FaqSection() {
   return (
     <section
-      id="how-it-works"
+      id="faq"
       className="container flex items-center flex-col space-y-2 py-8"
     >
       <h2 className="text-2xl md:text-3xl font-semibold text-center pb-8">

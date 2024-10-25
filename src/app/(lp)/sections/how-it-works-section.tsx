@@ -1,13 +1,13 @@
 "use client";
 
-import { SparklesIcon, UploadIcon, ZapIcon } from "lucide-react";
+import { BotIcon, SparklesIcon, ZapIcon } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const steps = [
   {
-    icon: UploadIcon,
+    icon: ZapIcon,
     title: "1. Avalie métricas e gere insights",
     description:
       "Monitore dados importantes do evento, como vendas, interações e emoções. Obtenha insights valiosos que ajudam a entender melhor o comportamento dos participantes e a identificar tendências.",
@@ -15,7 +15,7 @@ const steps = [
     className: "border",
   },
   {
-    icon: ZapIcon,
+    icon: BotIcon,
     title: "2. Gerencie os dados com IA",
     description:
       "Utilize inteligência artificial para processar e organizar os dados automaticamente. A IA identifica padrões e gera relatórios que facilitam a tomada de decisões estratégicas.",
@@ -52,7 +52,10 @@ export function HowItWorksSection() {
         <div className="grid gap-8">
           {steps.map(({ icon: Icon, title, description }, index) => (
             <button
-              className="flex items-center relative text-start"
+              className={cn(
+                "items-center relative text-start md:flex",
+                activeStep === index ? 'flex' : 'hidden'
+               )}
               key={index}
               onClick={() => setActiveStep(index)}
             >
@@ -77,9 +80,11 @@ export function HowItWorksSection() {
               <div className="size-12 text-primary bg-primary/10 rounded-full sm:mx-6 mx-2 flex items-center justify-center">
                 <Icon className="size-6" />
               </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold">{title}</h3>
-                <p className="text-muted-foreground">{description}</p>
+              <div className="flex-1 space-y-1">
+                <h3 className="text-md md:text-xl font-semibold">{title}</h3>
+                <p className="text-muted-foreground text-sm md:text-base">
+                  {description}
+                </p>
               </div>
 
               {activeStep === index && (

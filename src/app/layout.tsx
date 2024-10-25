@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 
 import { Providers } from "./providers";
-import { keywords } from "@/lib/seo";
+import { description, keywords } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 const fontSans = Poppins({
@@ -15,7 +15,7 @@ const fontSans = Poppins({
 
 export const metadata: Metadata = {
   title: "GeniusXP",
-  description: "Uma experiência genial em seus eventos",
+  description,
   keywords,
   applicationName: "GeniusXP",
   openGraph: {

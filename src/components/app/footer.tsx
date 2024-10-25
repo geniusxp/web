@@ -4,8 +4,8 @@ const footerSections = [
   {
     title: "Sobre",
     links: [
-      { label: "Por que o GeniusXP?", href: "#" },
-      { label: "Equipe", href: "#" },
+      { label: "Por que o GeniusXP?", href: "#faq" },
+      { label: "Equipe", href: "#our-team" },
       { label: "Blog", href: "#" },
       { label: "Imprensa", href: "#" },
     ],
@@ -39,7 +39,7 @@ export function Footer() {
           height={120}
           className="mb-auto"
         />
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-3 gap-8">
           {footerSections.map(({ title, links }) => (
             <div key={title} className="grid text-xs leading-relaxed text-muted-foreground">
               <p className="mb-1.5 text-base font-semibold text-foreground">

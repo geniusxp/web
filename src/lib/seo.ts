@@ -1,6 +1,10 @@
 export let keywords = [
   "GeniusXP",
   "Genius",
+  "Genius XP",
+  "Genius Experience",
+  "Genius Experience Platform",
+  "plataforma GeniusXP",
   "eventos",
   "experiência",
   "engajamento",
@@ -11,7 +15,7 @@ export let keywords = [
   "plataforma de eventos",
   "organização de eventos",
   "análise de dados",
-  "AI para eventos",
+  "IA para eventos",
   "eventos corporativos",
   "tecnologia em eventos",
   "análise de sentimento",
@@ -38,4 +42,11 @@ export let keywords = [
   "eventos com AI",
   "gestão inteligente de eventos",
   "solução para eventos",
+  "FIAP",
+  "FIAP NEXT",
+  "FIAP NEXT 2024",
+  "Plusoft",
+  "IA generativa",
 ];
+
+export let description = "GeniusXP é a plataforma de eventos que utiliza inteligência artificial para otimizar a experiência do participante e gerar insights, antes, durante e depois do evento para a organização.";
