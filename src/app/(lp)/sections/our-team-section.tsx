@@ -29,7 +29,7 @@ const team = [
     name: "Guilherme Dias",
     role: "Backend engineer",
     photo:
-      "https://media.licdn.com/dms/image/v2/D4D03AQEI3yl1MCF1-g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722884704150?e=1735171200&v=beta&t=wtYPokE1yOx922tT2VLrCedMfe0Ljis7kE6zm7aqNFA",
+      "https://media.licdn.com/dms/image/v2/D4D03AQEU_cnsu-MhSQ/profile-displayphoto-shrink_400_400/B4DZQnYszxGgAg-/0/1735827576082?e=1795046400&v=beta&t=W_pSzYamNFeNL1SQcRXN88ngWqEU-jvqfbQBnALNmIs",
     url: "https://www.linkedin.com/in/guilherme-dias-gomes",
   },
 ];
